@@ -74,11 +74,11 @@ deriv (f :+: fs) = (deriv1 fs 1) where
 integral fs = 0 :+: (int1 (fs) (1)) where
 	int1 (g :+: gs) (n) = (g/n) :+: int1 (gs) (n+1)
 
--- | Eksponentna funkcija, sinus in cosinus.
+-- | Eksponentna funkcija.
 expx, cosx, sinx:: Fractional a => Formal a
-expx = 1 + (integral expx)
-sinx = integral cosx
-cosx = 1 - (integral sinx)
+expx = 1 + (integral expx) 	-- | Eksponentna funkcija.
+sinx = integral cosx		-- | Sinus funkcija.
+cosx = 1 - (integral sinx)	-- | Cosinus funkcija.
 
 
 
